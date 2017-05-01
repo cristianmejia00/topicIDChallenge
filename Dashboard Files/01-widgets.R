@@ -70,6 +70,7 @@ TopPapers <- function(d, top = 10){
   Degree <- d$degrees[index] #Degree in the overall network (in + out)
   Cites <- d$TC[index]
   dois <- d$DI[index]
+  dois[is.na(dois)] <- ""
   dois <- sapply(dois, function(x) {
     if(nchar(x) >= 1) {
       paste("https://doi.org/",x, sep = "")} 

@@ -1,10 +1,10 @@
-#20161221
-#Knowledge Dashboard visualizer in shiny
-#(3/3)
+# 20161221
+# Knowledge Dashboard visualizer in shiny
+# (3/3)
 
-#This is a shiny app
-#It allows to navigate through the cluster similarly to FS
-#Depends on 01-widgets.R and 02-preparation.R (Must run first)
+# This is a shiny app
+# It allows to navigate through the cluster similarly to FS
+# Depends on 01-widgets.R and 02-preparation.R (Must run first)
 
 #Libraries
 library(shinydashboard)
@@ -16,7 +16,7 @@ library(DT)
 
 ########################################################
 ########################################################
-#UI
+# UI
 header <- dashboardHeader(
   title = "Knowledge Dashboard"
 )

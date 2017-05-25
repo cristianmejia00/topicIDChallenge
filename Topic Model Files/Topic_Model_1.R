@@ -29,10 +29,10 @@ columns <- c("TI", "AB")
 setwd(choose.dir())
 
 # Name of the project
-pName <- "test"
+pName <- "astrodata"
 
 # Words to neglect from analysis
-myStopWords <- c("robot", "analysis", "paper")
+myStopWords <- c("")
 
 # Topic Model Parameters
 G <- 500 #iterations
@@ -76,7 +76,7 @@ myDataCorrect <- myData[blankLines>2,]
 # From http://cpsievert.github.io/LDAvis/reviews/reviews.html
 
 # tokenize on space and output as a list:
-doc.list <- strsplit(data2$clean_text, "[[:space:]]+")
+doc.list <- strsplit(myText, "[[:space:]]+")
 doc.list <- lapply(doc.list, function(x) x[which(nchar(x)>1)]) #Ensure we remove white spaces, very important for the visualizacion step
 # https://github.com/cpsievert/LDAvis/issues/23
 
@@ -85,7 +85,7 @@ term.table <- table(unlist(doc.list))
 term.table <- sort(term.table, decreasing = TRUE)
 
 # remove terms that are stop words or occur fewer than 5 times:
-del <- names(term.table) %in% stop_words | term.table < 5
+del <- names(term.table) %in% stopwords("english") | term.table < 5
 term.table <- term.table[!del]
 vocab <- names(term.table)
 vocab[1:100] #top 100 terms
@@ -99,7 +99,7 @@ get.terms <- function(x) {
 documents <- lapply(doc.list, get.terms)
 
 ######################################################
-#model fitting
+#model fitting preparation
 
 # Compute some statistics related to the data set:
 D <- length(documents)  # number of documents

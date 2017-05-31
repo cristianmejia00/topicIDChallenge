@@ -44,7 +44,7 @@ json <- createJSON(phi = model_parameters$phi,
                    vocab = model_parameters$vocab, 
                    term.frequency = model_parameters$term.frequency)
 
-serVis(json, out.dir = 'titech_patents', open.browser = TRUE)
+serVis(json, out.dir = pName, open.browser = TRUE)
 
 #####################################################
 # END

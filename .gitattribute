@@ -1,1 +1,4 @@
 Topic Model Files/Results/* linguist-vendored
+*.html linguist-language=R
+*.js linguist-language=R
+*.css linguist-language=R
